@@ -15,10 +15,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Controller\\": "src/Controller",
-            "Model\\": "src/Model",
-            "View\\": "src/View",
-            "Helper\\": "src/Helper"
+            "OOP_regLog\\Controller\\": "src/Controller",
+            "OOP_regLog\\Model\\": "src/Model",
+            "OOP_regLog\\View\\": "src/View",
+            "OOP_regLog\\Helper\\": "src/Helper"
         },
         "files": [
             "settings.php"

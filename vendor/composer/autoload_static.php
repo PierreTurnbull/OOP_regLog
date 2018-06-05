@@ -14,35 +14,22 @@ class ComposerStaticInita38a5be3cb0e5d709cbad18f51dd6d78
     );
 
     public static $prefixLengthsPsr4 = array (
-        'V' => 
-        array (
-            'View\\' => 5,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
-        'M' => 
+        'O' => 
         array (
-            'Model\\' => 6,
-        ),
-        'H' => 
-        array (
-            'Helper\\' => 7,
-        ),
-        'C' => 
-        array (
-            'Controller\\' => 11,
+            'OOP_regLog\\View\\' => 16,
+            'OOP_regLog\\Model\\' => 17,
+            'OOP_regLog\\Helper\\' => 18,
+            'OOP_regLog\\Controller\\' => 22,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'View\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/View',
-        ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
@@ -55,15 +42,19 @@ class ComposerStaticInita38a5be3cb0e5d709cbad18f51dd6d78
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
-        'Model\\' => 
+        'OOP_regLog\\View\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/View',
+        ),
+        'OOP_regLog\\Model\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Model',
         ),
-        'Helper\\' => 
+        'OOP_regLog\\Helper\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Helper',
         ),
-        'Controller\\' => 
+        'OOP_regLog\\Controller\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Controller',
         ),
