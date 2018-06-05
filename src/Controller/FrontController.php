@@ -7,6 +7,8 @@ session_start();
 
 class FrontController
 {
+    private $session = null;
+    private $connection = null;
     /**
      * FrontController constructor. Call a page or 404 MVC function depending on the url.
      */
@@ -14,24 +16,18 @@ class FrontController
     {
         $path = basename($_SERVER["PHP_SELF"]);
         if ($path === "index.php" && SessionChecker::userIsLoggedIn()) {
-            $this->home();
+            $this->index(true);
         } else if ($path === "index.php") {
-            $this->index();
-        } else if ($path === "home") {
-            $this->home();
+            $this->index(false);
         } else {
             $this->error404();
         }
     }
 
-    public function index()
+    public function index(bool $isLoggedIn)
     {
-        echo "index!";
-    }
-
-    public function home()
-    {
-        echo "home!";
+        $pageController = new PageController();
+        $pageController->handleIndex($isLoggedIn);
     }
 
     public function error404()
