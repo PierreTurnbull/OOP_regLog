@@ -1,6 +1,6 @@
 {
     "name": "oop_reg-log/oop_reg-log",
-    "description": "An object oriented register/login system.",
+    "description": "An object oriented register/login system using MVC.",
     "type": "project",
     "license": "MIT",
     "authors": [
