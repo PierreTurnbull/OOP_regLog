@@ -1,0 +1,27 @@
+{
+    "name": "oop_reg-log/oop_reg-log",
+    "description": "An object oriented register/login system.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PierreTurnbull",
+            "email": "pierre.turnbull42@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "symfony/var-dumper": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Controller\\": "src/Controller",
+            "Model\\": "src/Model",
+            "View\\": "src/View",
+            "Helper\\": "src/Helper"
+        },
+        "files": [
+            "settings.php"
+        ]
+    }
+}
