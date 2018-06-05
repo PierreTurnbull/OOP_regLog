@@ -1,17 +1,53 @@
 <?php
 namespace OOP_regLog\View;
 
+use OOP_regLog\Helper\Session;
+
 class PageView
 {
     public function __construct()
     {
     }
 
+    public function displayMessages()
+    {
+        if (count($_SESSION["messages"]["registerErrors"]) > 0) {
+            ?>
+            <ul>
+                <h3>Errors:</h3>
+                <?php
+                foreach ($_SESSION["messages"]["registerErrors"] as $error) {
+                    ?>
+                    <li><?= $error ?></li>
+                    <?php
+                }
+                ?>
+            </ul>
+            <?php
+        }
+        Session::unsetSessionErrors("registerErrors");
+        if (count($_SESSION["messages"]["registerInformations"]) > 0) {
+            ?>
+            <ul>
+                <h3>Informations:</h3>
+                <?php
+                foreach ($_SESSION["messages"]["registerInformations"] as $info) {
+                    ?>
+                    <li><?= $info ?></li>
+                    <?php
+                }
+                ?>
+            </ul>
+            <?php
+        }
+        Session::unsetSessionErrors("registerInformations");
+    }
+
     public function displayUserForms()
     {
         ?>
         <section>
-            <form action="">
+            <form action="login">
                 <h2>Login</h2>
                 <label for="username">Username:</label>
                 <input type="text" name="username">
@@ -19,7 +55,7 @@ class PageView
                 <input type="password" name="password">
                 <input type="submit">
             </form>
-            <form action="">
+            <form action="register" method="POST">
                 <h2>Register</h2>
                 <label for="username">Username:</label>
                 <input type="text" name="username">
@@ -40,6 +76,12 @@ class PageView
 
     public function displayIndex()
     {
+        $this->displayMessages();
+        if (!Session::userIsLoggedIn()) {
+            $this->displayUserForms();
+        } else {
+            $this->displayLogout();
+        }
         ?>
         <section>
             <h1>Home page</h1>

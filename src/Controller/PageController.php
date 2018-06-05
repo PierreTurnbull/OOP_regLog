@@ -15,13 +15,17 @@ class PageController
         $this->view = new PageView();
     }
 
-    public function handleIndex(bool $isLoggedIn)
+    public function handleIndex()
     {
-        if (!$isLoggedIn) {
-            $this->view->displayUserForms();
-        } else {
-            $this->view->displayLogout();
-        }
         $this->view->displayIndex();
+    }
+
+    public function register(array $data)
+    {
+        if ($this->model->registerDataIsValid($data)) {
+            $this->model->register($data);
+        }
+        header("Location: /");
+        exit;
     }
 }

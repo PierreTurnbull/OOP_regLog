@@ -18,7 +18,7 @@ To use the database dump, create an empty database _(or you can overwrite an exi
 - Controller
     - FrontController: the main controller. Is also the router.
 - Helper: contains all services outside of the MVC
-    - SessionChecker: checks the state of the current session.
+    - Session: create and checks the state of the current session.
     - Connection: create and stores a static PDO connection to the database.
 
 ## Routes
